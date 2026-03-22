@@ -20,10 +20,14 @@ export default function Login() {
     console.log(enteredValues);
   }
 
-  function handleInputChange(identifier, event){
+  function handleInputChange(identifier, value){
     setEnteredValues(prevValues => ({
       ...prevValues,
-      [identifier]: event
+      [identifier]: value
+    }));
+    setDidEdit(prevEdit => ({
+      ...prevEdit,
+      [identifier]: false,
     }));
   }
 
